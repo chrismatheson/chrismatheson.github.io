@@ -1,0 +1,39 @@
+---
+layout: post
+title: Small Node script for export
+categories:
+- Development
+- Node.js
+- Personal
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:8:"33868880";s:7:"blog_id";s:8:"33875840";s:9:"mod_stamp";s:19:"2012-07-11
+    09:35:37";}
+  _elasticsearch_indexed_on: '2012-07-11 09:35:37'
+---
+I Decided that i wanted to move away from simple note which has served me well for the last few years and instead rely on a notes folder in dropbox and various platform app's to read / write to these
+
+Simple Note has various exporting options but one of them is not what i wanted 'all my notes as individual text files' so i exported them as a JSON object and set to work with Node.js
+
+<a href="https://gist.github.com/3089275" title="Gist of SimpleNoteExport.js" target="_blank">SimpleNoteExport.js</a>
+
+<code>
+var fs = require('fs');
+var notesString = fs.readFileSync('simplenote_export.json', 'utf8');
+var notesArray = JSON.parse(notesString);
+
+console.log('you have '+notesArray.length+' notes');
+
+for (var i = notesArray.length - 1; i &gt;= 0; i--) {
+
+	var filename = notesArray[i].content.substr(0,30)
+	filename = filename.replace(/(\r\n|\n|\r|\/|\\||:)/gm," ");
+	filename = filename.replace(/\s+/g," ");
+	//console.log(filename);
+	var newNote = fs.openSync('result/'+filename+'.txt','w');
+	fs.writeSync(newNote, notesArray[i].content);
+};
+</code>

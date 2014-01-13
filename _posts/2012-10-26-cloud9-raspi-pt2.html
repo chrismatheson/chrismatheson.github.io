@@ -1,0 +1,29 @@
+---
+layout: post
+title: Cloud9 & RasPi Pt2
+categories:
+- Node.js
+- RaspberryPi
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  _wpas_done_1463635: '1'
+  publicize_reach: a:2:{s:7:"twitter";a:1:{i:1463634;i:67;}s:2:"wp";a:1:{i:0;i:2;}}
+  publicize_twitter_user: Chrismatheson
+  _wpas_done_1463634: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:35538233;b:1;}}
+  _wpas_skip_1463634: '1'
+  _wpas_skip_1463635: '1'
+  _oembed_315962200a1a0505f6c5e833ccc13a9b: '{{unknown}}'
+  _elasticsearch_indexed_on: '2012-10-26 07:55:32'
+---
+<a title="Cloud9 &amp; RaspberryPi" href="http://chrismatheson.wordpress.com/2012/10/17/cloud9-raspberrypi/" target="_blank">Following on </a>: After completely blowing away my SD card i created another one this time installing Node 0.8.1 with <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=34&amp;t=18775" target="_blank">these instructions</a> and source mint installs with no problems at all.
+
+On-to the next problem, libxml. libxml is an npm package which i believe wraps the libxml Debian package with node bindings. There is a flag set in the build command line '-msse2' which is incompatible with the ARM architecture, this is known about but not yet fixed <a href="https://github.com/ajaxorg/node-libxml/issues/7">https://github.com/ajaxorg/node-libxml/issues/7</a>
+
+so to counter this i think i have to try and build libxml beforehand and then run the cloud9 install scrip again.
+
+<a href="http://raspberrypi.stackexchange.com/questions/3348/how-do-i-install-libxml-on-raspbian" target="_blank">StackEx conversation</a>

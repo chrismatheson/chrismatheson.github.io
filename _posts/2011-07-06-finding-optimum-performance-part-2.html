@@ -1,0 +1,55 @@
+---
+layout: post
+title: 'Finding optimum performance : Part 2'
+categories:
+- Personal
+tags:
+- Labview
+- Stepper Motor
+- TMCL
+status: publish
+type: post
+published: true
+meta:
+  posterous_bccc2885674f8ce96d767c9f59bde2e5_post_id: '59844982'
+  posterous_bccc2885674f8ce96d767c9f59bde2e5_permalink: http://labviewwork.posterous.com/finding-optimum-performance-part-2
+  _elasticsearch_indexed_on: '2011-07-06 09:23:00'
+---
+
+    <p>Following on from my last post i have continued to investigate techniques
+for &lsquo;End stop referencing&rsquo; which is my way of saying, return the motor to
+a know zero position.</p>
+
+<h2>Problem</h2>
+
+<p>Finding an end stop using the in built current limit cut-out &amp; speed
+monitoring method advised by Trinamic is sufficient, so long as you can
+guarantee our motor will be able to reach its target speed before hitting
+the end stop.
+If your motor is already at an end stop, target speed will never be
+reached and stall detection does not work. (the motor continuously tries
+to drive into the end stop).</p>
+
+<p>my first thought was to increase the current used in order to improve the
+&lsquo;spike&rsquo; created by a stall. some experiments with a stepper motor on my
+desk and a bech PSU showed no help.</p>
+
+<h2>Solution</h2>
+
+<p>It apears that current draw is not the trigger for stall detection but
+instead back EMF is being used. This has complicated things somewhat. Back
+EMF is something i have had little to no experience with so measuring,
+controlling, adjusting etc will be difficult. From Trinimic support forums
+and documentation the most useful response i could get was &ldquo;use the stall
+guard set-up tool&rdquo;. This indeed did help be refine my values of
+acceleration, velocity and stall guard level to a point where the motor
+could reliably find an end stop 90% of the time, 90% however will not be
+very useful in test equipment that could be run 100 times a week and would
+require some admin override/nasty work around/restart of ATE for every
+&lsquo;lost&rsquo; stepper motor.</p>
+
+<p>Instead ive decided to turn to more traditional methods, bite the bullet
+and install a mechanically linked rotary encoder to my stepper motor which
+will be able to give me a much more reliable indication of the motors
+current velocity.</p>
+  

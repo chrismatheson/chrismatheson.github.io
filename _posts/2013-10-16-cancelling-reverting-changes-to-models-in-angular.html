@@ -1,0 +1,45 @@
+---
+layout: post
+title: Cancelling / reverting changes to models in angular.
+categories:
+- Personal
+tags:
+- angular
+- Dev
+- javacript
+status: publish
+type: post
+published: true
+meta:
+  _elasticsearch_indexed_on: '2013-10-16 15:12:41'
+  _publicize_pending: '1'
+  publicize_linkedin_url: http://www.linkedin.com/updates?discuss=&scope=28304910&stype=M&topic=5796261228321964032&type=U&a=G3ld
+  publicize_twitter_user: Chrismatheson
+  publicize_twitter_url: http://t.co/tJofWbIi11
+  _wpas_done_1463634: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:35538233;b:1;}}
+  _wpas_done_1463635: '1'
+---
+Right up front I'm going to say that i haven't found the right answer to this problem. Yet.
+
+<strong>outline</strong>
+
+Add undo or save abilities to edits on a model in Angular.
+
+I have two templates which bind to my model. The edit template and the view template. When in the view the data is bound essentially one way and there is no problem. For edit, angular has some great binding that reacts to change events and sets the model value to the current value of the input. This is a key aspect of the angular frame work, and in a lot of places, this data-binding is really useful, except if you not sure you want to keep those changes.
+
+the two way binding will overwrite the original model with the new changes and then the original values are gone. so how do i implement a cancel/revet button?
+
+<strong>things i have tried already</strong>
+
+'get' the model again from a saved point. This involves making a request to the server for the original model value. Its expensive both in network &amp; time, so doesn't lead to a great user experience. Also this breaks for things not yet stored on the server.
+
+copy &amp; change. Take a copy of the model, edit that and push the changes back on save. The failure here is that with an async system like javascript, my model might not be fully loaded at the point i want to copy, and even if it is, how do i reflect changes to the original in my 'editing' copy?
+
+cacheing the model on each 'save' which allows me to get the original value back if my edit are cancelled. Still changes to the original from another source need to be re-cached.
+
+&nbsp;
+
+so im ata a loss. for now. ill write back if i find a suitable answer.
+
+&nbsp;

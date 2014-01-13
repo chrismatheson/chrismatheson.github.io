@@ -1,0 +1,39 @@
+---
+layout: post
+title: First Successful Node.js program
+categories:
+- Personal
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:8:"33868880";s:7:"blog_id";s:8:"33875840";s:9:"mod_stamp";s:19:"2012-06-14
+    08:39:44";}
+  _elasticsearch_indexed_on: '2012-06-14 08:39:44'
+---
+A while ago i talked about cloud development using <a href="http://c9.io/" target="_blank">Cloud9</a>, my latest project was also written entirely using Cloud9 and is now happly running on as a <a href="www.Heroku.com" target="_blank">Heroku</a> app.
+
+So what have i been up to ? Well i wanted to play with Node.js and therefore needed a small project. A friend of mine is in the early days of running a new restraunt called <a href="http://www.smallplates.co.uk" target="_blank">smallplates</a>, and being the computer nerd that i am, i decided what he needed was a twitter bot that could return the current menu to any <a href="https://twitter.com/?category=people#!/smallplatesNQ" target="_blank">@smallplatenq</a> follower who so desired it. Ive posted my code in its current format to <a href="https://github.com/chrismatheson/SPTwitBot" target="_blank">github</a> which is working but still has some improvements needed <!--more-->
+
+Current issues that need to be addressed:
+
+The menu is hard coded in as an array. In the future versions im going to work on having this information scrapped from the Small Plates website which is still under construction.
+<pre>var menu = new Array('The Current Menu at @smallplatesnq looks like this',
+                    'BUTTERMILK FRIED CHICKEN w/ roasted peanut sauce\n\n CRISPY PORK CHEEK w/ smoked bacon sauce &amp; Rekordelig mayo',
+                    'LAMB MEATBALLS w/ tomato sauce\n\n BREADED WHITEBAIT w/ cockle ‘popcorn’, Rekorderlig mayo',
+                    'COD CHEEK IN BEER BATTER w/ mushy peas\n\n MINI SQUID BURGERS w/ lettuce and onion',
+                    'MARIS PIPER MASH CAKES w/ cucumber ketchup, smoked salt\n\n YORKSHIRE PUDDINGS w/ whipped blue cheese, chilli jam',
+                    'ASPARAGUS SPEARS w/ fondue',
+                    '====== Sides (£3.00) ======',
+                    'TRIPLE COOKED CHIPS w/ served with ketchup and mayo\n\n ONION RINGS w/ fried in beer batter',
+                    'PORK SCRATCHINGS w/ five spice, salt and pepper');</pre>
+<div></div>
+<div>The bot replies with the menu via direct messages to the requesting user. This stops the main feed from getting cloged up and annoying other followers who wouldn't want to see 6/7 identical tweets ever hour or so when a customer makes the menu request. However if the requesting user does not have the correct following/followed set up with the smallplates account then the messages will fail and there is no feedback mechanism for this. In the future i would like to provide a feedback tweet to the user and some auto following fixes to get round as much of this as possible.</div>
+<div></div>
+<div></div>
+<div>Last but by no means least, the activity of the bot is, for the large part, un-monitored. Some reporting / logging abilities would be good so that the owner of the smallplates account could find out stats on who's been asking for</div>
+<div>info and how many times etc etc</div>
+<div></div>
+<div></div>
+<div>Bots like this are nothing new. In fact to begin with i started goggling for a pre-coded one that i could spin up on heroku or another server and just get cracking with right away. There didn't seem to be anything out there. This seems odd to me as there must be thousands of support orientated twitter accounts that i would expect to have "canned" responses for simple queries. If i get time i will try to imporve this to the point where it can track multiple user/word combinations and then promote it as a possibility for support or even just general interaction for companies social interaction.</div>

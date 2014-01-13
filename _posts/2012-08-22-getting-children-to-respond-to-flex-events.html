@@ -1,0 +1,22 @@
+---
+layout: post
+title: Getting children to respond to FLEX events
+categories:
+- Development
+tags:
+- ActionScript
+- Flex
+- UOS
+status: publish
+type: post
+published: true
+meta:
+  _elasticsearch_indexed_on: '2012-08-22 10:50:05'
+---
+Firstly, i dont have a framework in place. I know that everyone will tell me that a decent FLEX framework would have stopped this problem before it begins but for Units Of Sound we decided against it for a couple of reasons, but mostly, simplicity.
+
+So that being said here is my problem. My application makes use of viewstacks and viewstack controllers (i quite like this paradime that i was introduced to when taking on my first iOS app) to control views in the form of <code><strong>public class page extends NavigatorContent</strong></code> of a a <code><strong>public class lesson extends ViewStack</strong></code> with a <code><strong>PageNavigationController</strong></code> which is a group of buttons with a reference to the lesson viewstack.
+
+I want my pages, and the subcomponents of these, to be able to respond to events from the controller but my controller sits 'higher' in the display stack and therefore the events are only catchable by components above it.
+
+Not sure how im going to fix this one but hopefully ill be able to come back and update on this issue soon enough

@@ -1,0 +1,35 @@
+---
+layout: post
+title: Developing Units of Sound online
+categories:
+- Development
+- Units Of Sound
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  _wpas_done_1463635: '1'
+  publicize_twitter_user: Chrismatheson
+  _wpas_done_1463634: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:35538233;b:1;}}
+  _elasticsearch_indexed_on: '2012-11-16 08:54:14'
+---
+To begin with, some background <a href="http://http://www.unitsofsound.net/" target="_blank">Units of Sound</a> is a online port of an existing windows native program, and currently has an install base of around 5000 users all in the UK. To allow expansion to other countries and other platforms as well as to out run limitations with the old program (written in a non longer supported language) I am helping move this program to a Flex application which will be capable of running entirely in browser.
+
+&nbsp;
+
+Architecture in my mind is what drives the majority of high level decisions including 'do we even need our own server?' this sounds like an obvious question but after some thought about the operation of the program i found that 95% of it was statically served and run entirely in the client.
+<p style="text-align:center;"><img class="aligncenter" alt="" src="http://skamv.files.wordpress.com/2010/11/kiss.png" height="173" width="178" /></p>
+<p style="text-align:left;">The KISS principle is something I think about a lot when undertaking tasks of this nature. The UOS team is made up of two developers and in all likelihood will never be made up of any more, once written the program will change very little, there will be the bare minimum of documentation and the scale will most  likely never top 30-40K users. Bearing this in mind its more important that bugs can be found easily, code can be stopped and stepped through and that what each function and section is trying to achieve is obvious.</p>
+<p style="text-align:left;">My latest conundrum comes the previously mentioned question 'Do we even need our own server?'  Flex is a very powerful language, it allows us to make http calls and use other third party SaaS type API's E.G <a href="http://aws.amazon.com/s3/" target="_blank">Amazon Web Services S3</a> or <a href="http://www.rackspace.com/cloud/public/files/" target="_blank">Rackspace Cloudfiles</a>, why not just use these to do the small amount of storing required? we could even find a company to host our database, server our static content from storage providers and we are 100% 'serverless' (serverless as in we dont have to write any server side code).  But this architectural decision does have downsides, first and most obviously is we loose control of that area of our program and therefore User Experience. With a realitively small number of users its important to provide an excellent user experience. We would loose a few other things:</p>
+
+<ul>
+	<li> custom request hooks</li>
+	<li>analytics becomes harder</li>
+	<li>unforseen functionality might be limited</li>
+	<li>caching not under out control</li>
+	<li>easy of access to our 'own' data</li>
+</ul>
+My decision was not a light one, the simple approach of no server to deal with is very aluring, but in the end the unknows and out-of-our-control's are too many so we will stick with a traditional approach and run our own server. Next post, Technology

@@ -1,0 +1,43 @@
+---
+layout: post
+title: Node.JS & express as a replacement for Apache httpserver
+categories:
+- Node.js
+- Personal
+tags:
+- Express
+- Proxy
+- server
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:8:"33868880";s:7:"blog_id";s:8:"33875840";s:9:"mod_stamp";s:19:"2012-08-31
+    09:56:59";}
+  _wpas_done_twitter: '1'
+  _oembed_22c9001287994d7a30a4824332ba03e8: '{{unknown}}'
+  _oembed_8c36536ef6d0f97bca2881b5374b6efe: '{{unknown}}'
+  _elasticsearch_indexed_on: '2012-08-31 09:56:59'
+---
+In my ongoing learning with Node.js i find at each turn im more and more surprised at just how much it can do for me. Recently this surprise took the form of a problem ive been having froa while now with configuring Apache for proxy and reverse proxy to multiple web apps on my local server.
+
+Here's the run down of the situation:
+
+i have 4 main web-app's running on my server for various reasons and on various ports
+<ul>
+	<li>Transmission on port 9091</li>
+	<li>SickBeard on port 8081</li>
+	<li>CouchPotato on port 5000</li>
+	<li>sabznbd+ on port 8085</li>
+	<li>XBMC on port 8080</li>
+	<li>Ajenti on port 8000</li>
+</ul>
+Currently i can reach each service in turn by sticking in the port as part of the URL <code>http://server:5000/</code> gets me CouchPotato for example, but this isnt the nicest of URL's to remember so what i really want is <code>http://server/couchpotato</code> instead. So some quick googling later and i find out that i can configure my allready installed and running Apache httpserver to do this with proxies and reverse proxies, excilent, and it all looks relatively simple to modify a few htaccess and other such setup files.
+
+<strong>NO SUCH LUCK</strong> i consider myself a reasonable software developer and a fairly advanced computer user, so modifying a couple of files and reading a few API docs are not beyond me, but for love nor money i cannot get this stuff to work.
+
+<em>Skip ahead 6 months of nasty urls</em>
+
+I wonder if Node can do this sor of thing, quick google later and i find <a href="https://github.com/nodejitsu/node-http-proxy" title="node-http-proxy" target="_blank">node-http-proxy</a> and a 3 minute express <a href="https://github.com/chrismatheson/httpSvr/blob/master/app.js" target="_blank">config file</a> later and ive got my proxies working like a dream.
+
+With this experience and others ive decided to uninstall Apache completely and reply on Node.JS as my sole web server for just now. Hopefully this will simplify my life dramatically.

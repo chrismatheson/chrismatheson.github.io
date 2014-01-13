@@ -1,0 +1,69 @@
+---
+layout: post
+title: Cloud9 & RaspberryPi
+categories:
+- Development
+- Node.js
+- RaspberryPi
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  publicize_twitter_user: Chrismatheson
+  _wpas_done_1463634: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:35538233;b:1;}}
+  _wpas_done_1463635: '1'
+  publicize_reach: a:2:{s:7:"twitter";a:1:{i:1463634;i:65;}s:2:"wp";a:1:{i:0;i:1;}}
+  _elasticsearch_indexed_on: '2012-10-17 14:49:42'
+---
+Ive long been a fan of <a href="http://c9.io" target="_blank">Cloud9 IDE</a> and with my recent purchase of a <a href="http://wwwraspberrypi.org" target="_blank">RaspberryPi</a> what better way to start some native code development than with the IDe i already know and love.
+
+Cloud9 started off with a heavy Node.JS bias, in fact the majority is written in node, but with ACE editor at the heart and its increasing ability to access the command line, configure 'deplyment' commands i figure it will make a fantastic IDE for C / C++ / Python or obviously Node.js development on the PI.
+
+So flashed my SD card with a fresh <a href="http://learn.adafruit.com/adafruit-raspberry-pi-educational-linux-distro/occidentalis-v0-dot-2" target="_blank">Adafruit image</a> to get some of the kernel module bells and whistles for later use and went about getting C9 up and running.
+
+Step 1 : Node
+
+This was simple enough <code>sudo apt-get install nodejs</code> and I've installed node, but seeing as this is only version 0.6.* from the repo ill need npm as well <code>sudo apt-get install npm</code> a hop back to the command line and bobs your fathers brother
+<img class="aligncenter size-medium wp-image-979" title="Node on Pi" alt="" src="http://chrismatheson.files.wordpress.com/2012/10/screenshot-2012-10-17_15-35-46.png?w=300" height="36" width="300" />
+
+Step 2 : Cloud9
+
+Cloud9 have some great instructions on there <a href="https://github.com/ajaxorg/cloud9" target="_blank">github readme</a> so off to work i go. unfortuneatly this is where the wheel start to come off...
+<code></code>
+
+/usr/local/bin/sm -&gt; /usr/local/lib/node_modules/sm/bin/sm
+
+&gt; sm@0.1.69 postinstall /usr/local/lib/node_modules/sm
+&gt; node ./scripts/postinstall.js
+
+npm ERR! TypeError: options.uid should be a number
+npm ERR! at ChildProcess.spawn (child_process.js:429:26)
+npm ERR! at Object.spawn (child_process.js:342:9)
+npm ERR! at spawn (/usr/share/npm/lib/utils/exec.js:103:22)
+npm ERR! at exec (/usr/share/npm/lib/utils/exec.js:40:12)
+npm ERR! at Array.0 (/usr/share/npm/lib/utils/lifecycle.js:141:5)
+npm ERR! at EventEmitter._tickCallback (node.js:190:39)
+npm ERR! You may report this log at:
+npm ERR! &lt;http://bugs.debian.org/npm&gt;
+npm ERR! or use
+npm ERR! reportbug --attach /usr/share/cloud9/npm-debug.log npm
+npm ERR!
+npm ERR! System Linux 3.2.27+
+npm ERR! command "node" "/usr/bin/npm" "install" "-g" "sm"
+npm ERR! cwd /usr/share/cloud9
+npm ERR! node -v v0.6.19
+npm ERR! npm -v 1.1.4
+npm ERR! message options.uid should be a number
+npm ERR!
+npm ERR! Additional logging details can be found in:
+npm ERR! /usr/share/cloud9/npm-debug.log
+npm not ok
+
+Som more google shows no real answers so i figure im going to plow on and just do a standard npm install.
+
+&nbsp;
+
+More updates to come. . . .
