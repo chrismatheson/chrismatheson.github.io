@@ -1,3 +1,8 @@
 name: Chris Matheson's ramblings
 markdown: redcarpet
 pygments: true
+github: www.github.com/chrismatheson
+about:
+urls:
+    - text: github
+      url: https://github.com/chrismatheson
