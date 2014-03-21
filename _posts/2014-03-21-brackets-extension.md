@@ -1,4 +1,13 @@
-#Package Viewer
+---
+layout: post
+title: Package Viewer
+tags:
+- brackets
+- Dev
+- javacript
+type: post
+published: true
+---
 
 Today i released the [brackets-package-viewer](https://github.com/chrismatheson/brackets-package-viewer) an extension for the brilliant [brackets](http://brackets.io) application.
 
