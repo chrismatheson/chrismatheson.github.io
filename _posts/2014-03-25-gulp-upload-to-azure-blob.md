@@ -7,24 +7,24 @@ tags: [javascript, azure, gulp]
 published: true
 ---
 
-Gulp has been in place in iVendi for about 2 months now. Its really brough down the build times, but also the complexity. Some (including me) would say this is an even bigger win.
+Gulp has been in place in iVendi for about 2 months now. It's really brought down the build times, but also the complexity. Some (including me) would say this is an even bigger win.
 
-This week i started to get to grips with Node streams in a bit way so that i could write my own streaming build step, and i have to say that it was a lot easier that i had expected and definately very powerful.
+This week I started to get to grips with Node streams in a big way so that I could write my own streaming build step, and I have to say that it was a lot easier that I had expected and definitely very powerful.
 
-The basic premis for my task is to upload all our fron end code to Azure blobs.
+The basic premise for my task is to upload all our front end code to Azure blobs.
 
 ###First Crack
-The first version of a solution came from a collegue and looked as such . . .
+The first version of a solution came from a colleague and looked as such . . .
 
 {% gist 9803545 %}
 
-This solution wokred but for me it was a bit too . . . Non-Streaming?
+This solution worked but for me it was a bit too . . . Non-Streaming?
 
 Its performing a few different tasks here
 
 - uploading the files to azure
 - prefixing a version to the filenames of JS & CSS (/static/bazinga.js --> /static/\<some-prefix\>-bazinga.js)
-- insert approporate ```<script>``` and ```<link>``` tags in the ```index.html```
+- insert appropriate ```<script>``` and ```<link>``` tags in the ```index.html```
 
 So for me it was a little too mixed in its concern so i decided to break it into seperate parts, also the ```files.forEach``` seems to be going aginst what streaming is about. So i gave a crack at refactoring this and came up with two new parts.
 
@@ -32,7 +32,7 @@ So for me it was a little too mixed in its concern so i decided to break it into
 
 {% gist 9803617 %}
 
-Gulp tasks work on an Object stream which will 'event' out new File objects. These can be manipulated and then passed back. So for this task im ammending the ```chuck.path``` to insert the prefix at the right place.
+Gulp tasks work on an Object stream which will 'event' out new File objects. These can be manipulated and then passed back. So for this task I'm amending the ```chuck.path``` to insert the prefix at the right place.
 
 ###The uploading part
 
