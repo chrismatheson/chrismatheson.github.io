@@ -22,11 +22,11 @@ So i hearby offer the foloowing bits of hardwares up to the first person to get 
 ##playstation portable - broken somehow but screen still looks fine
 ![PSP](/img/IMG_0218.jpg)
 
-##Xacti camcorder - fully working last time i checked
+~~##Xacti camcorder - fully working last time i checked~~
 ![PSP](/img/IMG_0219.jpg)
 
 ##Microchip dev boards - fully working last time i checked
 ![Pal Zire 71](/img/IMG_0220.jpg)
 
-##TV Tuner / USB coverter thingy - fully working last time i checked
+~~##TV Tuner / USB coverter thingy - fully working last time i checked~~
 ![Pal Zire 71](/img/IMG_0221.jpg)
