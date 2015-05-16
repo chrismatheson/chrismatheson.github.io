@@ -6,3 +6,7 @@ about:
 urls:
     - text: github
       url: https://github.com/chrismatheson
+    - text: twitter
+      url: https://twitter.com/chrismatheson
+    - text: email
+      url: mailto://chris@matheson.it
