@@ -1,7 +1,8 @@
 name: Dont Panic
 markdown: redcarpet
-pygments: true
+highlighter: true
 github: www.github.com/chrismatheson
+gems: ['jekyll-gist']
 about:
 urls:
     - text: github

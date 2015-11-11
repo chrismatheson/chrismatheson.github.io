@@ -4,7 +4,7 @@ title: Is this really simpler?
 categories:
   - Personal
   - Code
-tags: ['thoughts', 'architecture', 'code' 'web']
+tags: ['thoughts', 'architecture', 'code', 'web']
 type: post
 published: true
 ---
@@ -43,17 +43,13 @@ Assuming a SSG product is deployed to something along the lines of S3, hacking a
 
 I do not think that my project is going to reach millions of views per second, and premature optomisation (esp in the architecture) can end up causing more problems than it solves. However let do a completely made up, not data back in any way comparision of the two technologies under certain amounts of load.
 
----------------------------------------------------------------------------------
-| Finctional req/s | Dynamic site change required | Static site change required |
----------------------------------------------------------------------------------
-| 1/s | no change | no change |
----------------------------------------------------------------------------------
-| 10/s | DB indexes | no change |
----------------------------------------------------------------------------------
-| 100/s | Caching | no change |
----------------------------------------------------------------------------------
-| 1000/s | Multi Machine, DB clustering, god know what else | no change |
----------------------------------------------------------------------------------
+<table>
+  <tr><td><b>Finctional req/s</b></td><td><b>Dynamic site change required</b></td><td><b>Static site change required</b></td></tv>
+  <tr><td>1</td><td>DB indexes</td><td>no change</td></tv>
+  <tr><td>10</td><td>DB indexes</td><td>no change</td></tv>
+  <tr><td>100</td><td>Caching</td><td>no change</td></tv>
+  <tr><td>1000</td><td>Multi Machine, DB clustering, god know what else</td><td>no change</td></tv>
+</table>
 
 If your getting enough traffic to cause S3 problems in serving static files. Well i have no idea how you solve that, but i would imagine that by that time you will have other issues and/or hopefully lots of money to combat them.
 On the other hand the numebr of WordPress instances that basicly stop functioning without Varnish i imagine to be quite high. Certain queries can clog up the DB connection pool and cuase hours of lost time configuring indexs, but most importantly, mean bad experiences for the user while the issue is being addressed, or possibly even downtime.

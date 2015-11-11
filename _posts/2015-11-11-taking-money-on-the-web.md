@@ -4,7 +4,7 @@ title: Taking money on the web
 categories:
   - Personal
   - Code
-tags: ['thoughts', 'sagepay', 'paypal', 'research', 'code' 'web']
+tags: ['thoughts', 'sagepay', 'paypal', 'research', 'code', 'web']
 type: post
 published: true
 ---
@@ -17,7 +17,7 @@ rather than webpages and credit/debit cards. This works for them and i have no b
 this will not be acceptible to the general public who are our target for the home version. So i begin my journey into what it takes
 to accept online payments.
 
-#Knowledge so far
+##Knowledge so far
 
 My understanding of online payments so far is not exact to say the least. Ive herd of a few buzz words, companies and terms...
 
@@ -28,7 +28,7 @@ My understanding of online payments so far is not exact to say the least. Ive he
 - magento - php framework for a webshop (i think) hosted option?
 - tax rules - sure there was some tax rules etc that have chagned recently
 
-#goals & requirements
+##Goals & requirements
 
 ###**NO OPS**
 
@@ -42,12 +42,12 @@ Maybe not from day 1, but unitsofsound os on the web and one major bonus of that
 so we will need to be able to take payments from USA/Canada and possibly other countries. Ive no idea what repocussions this has in terms
 of charges, tax, exchanerates etc.
 
-##Unified flow
+###Unified flow
 
 Keeping the whole experience fast & painless for the user is a must. Ill bounce out to a know site (paypal etc) if the benifits are there
 but if possible it would be desirable to keep the whole thing on our domain.
 
 
-#TBC
+##TBC
 
 This is a learing journey so ill try and report back progress, descisions etc in the future
