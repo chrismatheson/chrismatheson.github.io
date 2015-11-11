@@ -1,6 +1,6 @@
 name: Dont Panic
 markdown: redcarpet
-highlighter: true
+highlighter: pygments
 github: www.github.com/chrismatheson
 gems: ['jekyll-gist']
 about:
