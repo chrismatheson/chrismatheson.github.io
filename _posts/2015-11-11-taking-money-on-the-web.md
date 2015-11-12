@@ -32,22 +32,22 @@ My understanding of online payments so far is not exact to say the least. Ive he
 
 ###**NO OPS**
 
-I want to reduce opperations costs as much as possible, SaaS options are welcomed, automations if not, keep it as simple as possible
+I want to reduce operations costs as much as possible, SaaS options are welcomed, automations if not, keep it as simple as possible
 so there is less to maintain & monitor. This extends a little into the payments, as in, is there a way to refund? what about fraud?
 i really dont want to hold credit card info!
 
 ###International payments
 
-Maybe not from day 1, but unitsofsound os on the web and one major bonus of that was to futher the reach of students to outside the UK.
-so we will need to be able to take payments from USA/Canada and possibly other countries. Ive no idea what repocussions this has in terms
+Maybe not from day 1, but unitsofsound is on the web and one major bonus of that was to futher the reach of students to outside the UK.
+so we will need to be able to take payments from USA/Canada and possibly other countries. Ive no idea what repercussions this has in terms
 of charges, tax, exchanerates etc.
 
 ###Unified flow
 
-Keeping the whole experience fast & painless for the user is a must. Ill bounce out to a know site (paypal etc) if the benifits are there
+Keeping the whole experience fast & painless for the user is a must. Ill bounce out to a know site (paypal etc) if the benefits are there
 but if possible it would be desirable to keep the whole thing on our domain.
 
 
 ##TBC
 
-This is a learing journey so ill try and report back progress, descisions etc in the future
+This is a learning journey so ill try and report back progress, descisions etc in the future
