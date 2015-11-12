@@ -22,7 +22,7 @@ to accept online payments.
 My understanding of online payments so far is not exact to say the least. Ive herd of a few buzz words, companies and terms...
 
 - paypal - yup, used them, know what there about from a customers POV
-- strpe - more hipster version fo paypal
+- stripe - more hipster version fo paypal
 - payment gateway - someone/thing who takes payment? do i **need** one? is paypal (etc) a payment gateway?
 - merchent account - dunno, some fancy word for interacting with banks?
 - magento - php framework for a webshop (i think) hosted option?
